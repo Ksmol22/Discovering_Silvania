@@ -1,0 +1,226 @@
+:root {
+  --bg-color: #eaddcb; /* Matching the exact cream/sepia from the image */
+  --bg-secondary: #e3d3bd;
+  --text-main: #243425; /* Very Dark Green matching SILVANIA text */
+  --text-secondary: #5a4f40; /* Brownish text */
+  --border-color: #cbbba1;
+  
+  --font-heading: 'Playfair Display', serif;
+  --font-body: 'Lora', serif;
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  background-color: var(--bg-color);
+  color: var(--text-main);
+  font-family: var(--font-body);
+  line-height: 1.6;
+  overflow-x: hidden;
+  background-image: url('https://www.transparenttextures.com/patterns/cream-paper.png');
+}
+
+/* Ensure the app container takes up the full width but retains background */
+.app-container {
+  min-height: 100vh;
+  background-image: url('https://www.transparenttextures.com/patterns/aged-paper.png');
+}
+
+h1, h2, h3, h4, h5, h6 {
+  font-family: var(--font-heading);
+  font-weight: 700;
+  color: var(--text-main);
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+ul {
+  list-style: none;
+}
+
+.container {
+  max-width: 1400px;
+  margin: 0 auto;
+  padding: 0 2rem;
+}
+
+/* Typography Utilities */
+.subtitle {
+  font-style: italic;
+  color: var(--text-secondary);
+  font-size: 1.1rem;
+}
+
+.section-title {
+  font-size: 2.2rem;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  border-bottom: 1px solid var(--border-color);
+  padding-bottom: 0.5rem;
+  margin-bottom: 2rem;
+  display: inline-block;
+}
+
+/* Vintage Button */
+.btn-vintage {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.5rem 1rem;
+  background: transparent;
+  border: 1px solid var(--text-main);
+  color: var(--text-main);
+  font-family: var(--font-heading);
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  font-size: 0.8rem;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  border-radius: 25px;
+}
+
+.btn-vintage:hover {
+  background: var(--text-main);
+  color: var(--bg-color);
+}
+
+/* Scrollbar */
+::-webkit-scrollbar {
+  width: 10px;
+}
+::-webkit-scrollbar-track {
+  background: var(--bg-color);
+}
+::-webkit-scrollbar-thumb {
+  background: var(--border-color);
+  border-radius: 5px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: var(--text-secondary);
+}
+
+.page-fade-in {
+  animation: fadeIn 0.6s ease-in-out;
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(10px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+/* Footer with Panoramic background and gradient */
+.main-footer {
+  position: relative;
+  margin-top: 4rem;
+  padding: 6rem 2rem 3rem;
+  text-align: center;
+  background-image: linear-gradient(to bottom, rgba(234, 221, 203, 1) 0%, rgba(36, 52, 37, 0.8) 50%, rgba(36, 52, 37, 0.95) 100%), url('./assets/panoramica_fo.jpg');
+  background-size: cover;
+  background-position: center;
+  background-attachment: fixed; /* Parallax effect */
+  color: #fff;
+  border-top: 2px solid var(--border-color);
+}
+
+.footer-content {
+  position: relative;
+  z-index: 1;
+}
+
+.footer-quote {
+  font-family: var(--font-heading);
+  font-size: 2.5rem;
+  font-style: italic;
+  margin-bottom: 1rem;
+  text-shadow: 2px 2px 4px rgba(0,0,0,0.5);
+  color: #fdfaf3;
+}
+
+.footer-copy {
+  font-family: var(--font-body);
+  font-size: 0.9rem;
+  color: rgba(255,255,255,0.7);
+  letter-spacing: 1px;
+}
+
+/* Global Lightbox Styles */
+.lightbox-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background: rgba(0, 0, 0, 0.85);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 9999;
+  backdrop-filter: blur(5px);
+  animation: fadeIn 0.3s ease;
+}
+
+.lightbox-content-card {
+  background: var(--bg-color);
+  background-image: url('https://www.transparenttextures.com/patterns/aged-paper.png');
+  padding: 1.5rem;
+  border-radius: 8px;
+  max-width: 800px;
+  width: 90%;
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+  box-shadow: 0 15px 40px rgba(0,0,0,0.4);
+  border: 1px solid var(--border-color);
+  position: relative;
+  animation: zoomIn 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+}
+
+@keyframes zoomIn {
+  from { transform: scale(0.9); opacity: 0; }
+  to { transform: scale(1); opacity: 1; }
+}
+
+.lightbox-image {
+  width: 100%;
+  max-height: 60vh;
+  object-fit: contain; /* Better for culture images of different sizes */
+  border: 4px solid #fdfaf3;
+  box-shadow: 2px 4px 12px rgba(0,0,0,0.1);
+  filter: sepia(0.2) contrast(1.1);
+  background: #fdfaf3;
+}
+
+.lightbox-details {
+  text-align: center;
+}
+
+.lightbox-details .place-title {
+  font-size: 1.8rem;
+  margin: 0.5rem 0;
+}
+
+.lightbox-details .place-desc {
+  font-size: 1.1rem;
+}
+
+.lightbox-close {
+  position: absolute;
+  top: 2rem;
+  right: 2rem;
+  background: transparent;
+  border: none;
+  color: #fff;
+  cursor: pointer;
+  transition: transform 0.2s;
+}
+
+.lightbox-close:hover {
+  transform: scale(1.2);
+}

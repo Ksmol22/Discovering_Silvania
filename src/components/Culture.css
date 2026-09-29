@@ -1,0 +1,287 @@
+.culture-section {
+  padding: 4rem 6rem;
+  max-width: 1400px;
+  margin: 0 auto;
+  border-bottom: 2px solid rgba(0,0,0,0.05);
+  display: flex;
+  flex-direction: column; /* Stack top row and bottom row vertically */
+  gap: 5rem; /* Gap between top and bottom rows */
+  background-image: url('https://www.transparenttextures.com/patterns/cream-paper.png');
+}
+
+.culture-header-center {
+  margin-bottom: 2rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+}
+
+.culture-header-center .section-title {
+  border-bottom: none; /* Remove any global underline */
+  margin-bottom: 0;
+  text-align: center;
+}
+
+.culture-bento-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 20px;
+  width: 100%;
+}
+
+.bento-item {
+  position: relative;
+  overflow: hidden;
+  border-radius: 8px;
+  background: rgba(255, 255, 255, 0.4);
+  border: 1px solid var(--border-color);
+  box-shadow: 2px 4px 15px rgba(0,0,0,0.05);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.bento-text {
+  padding: 2.5rem;
+  grid-column: span 2;
+}
+
+.bento-text h3 {
+  font-family: var(--font-heading);
+  color: var(--text-main);
+  font-size: 1.6rem;
+  margin-bottom: 1rem;
+}
+
+.bento-text p {
+  color: var(--text-secondary);
+  font-size: 1.05rem;
+  line-height: 1.8;
+  margin: 0;
+}
+
+.bento-img {
+  grid-column: span 1;
+  cursor: zoom-in;
+  padding: 0;
+  border: 4px solid #fdfaf3;
+}
+
+.bento-img.wide {
+  grid-column: span 2;
+}
+
+.bento-img img {
+  width: 100%;
+  height: 100%;
+  min-height: 250px;
+  object-fit: cover;
+  filter: sepia(0.3) contrast(1.1);
+  transition: transform 0.4s ease;
+}
+
+.bento-img:hover img {
+  transform: scale(1.05);
+}
+
+.bento-overlay {
+  position: absolute;
+  top: 0; left: 0; right: 0; bottom: 0;
+  background: rgba(44, 53, 44, 0.6);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  opacity: 0;
+  transition: opacity 0.3s ease;
+}
+
+.bento-img:hover .bento-overlay {
+  opacity: 1;
+}
+
+.bento-overlay span {
+  color: #fff;
+  font-family: var(--font-heading);
+  font-size: 1.2rem;
+  letter-spacing: 1px;
+  border: 1px solid #fff;
+  padding: 0.5rem 1rem;
+}
+
+/* --- BOTTOM ROW REBUILD --- */
+
+.culture-bottom-row {
+  display: flex;
+  width: 100%;
+  align-items: stretch; /* Ensures the vertical line spans the whole height */
+  margin-top: 1.5rem;
+}
+
+.quote-column {
+  width: 35%;
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  padding-right: 4rem;
+  border-right: 1px solid rgba(0,0,0,0.15);
+}
+
+.culture-quote {
+  font-family: var(--font-heading);
+  font-size: 2.2rem;
+  font-style: italic;
+  font-weight: 400;
+  color: var(--text-main);
+  line-height: 1.2;
+  margin: 0;
+  text-align: left;
+  max-width: 250px;
+}
+
+.walkthrough-column {
+  width: 65%;
+  padding-left: 4rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.walkthrough-title {
+  font-family: var(--font-heading);
+  font-size: 1.4rem;
+  letter-spacing: 4px;
+  color: var(--text-main);
+  text-transform: uppercase;
+  margin: 0;
+}
+
+.walkthrough-line {
+  width: 40px;
+  height: 1px;
+  background: var(--text-main);
+  margin: 1rem 0;
+}
+
+.walkthrough-desc {
+  font-family: var(--font-heading);
+  font-style: italic;
+  font-size: 1.1rem;
+  color: var(--text-secondary);
+  margin: 0 0 1.5rem 0;
+}
+
+.timeline-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  width: 100%;
+  position: relative;
+  margin-top: 2rem;
+  margin-bottom: 4rem;
+}
+
+/* Connecting dashed line */
+.timeline-container::before {
+  content: '';
+  position: absolute;
+  top: 35px; /* Center of the 70px icon wrap */
+  left: 5%;
+  right: 5%;
+  height: 1px;
+  border-top: 1px dashed var(--text-main);
+  z-index: 0;
+  opacity: 0.4;
+}
+
+.timeline-item {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  z-index: 1;
+  width: 18%; /* Fits 5 items perfectly */
+}
+
+.timeline-icon-wrap {
+  background: #fdfaf3; /* Match vintage background to hide the dashed line behind it */
+  border: 1px solid var(--text-main);
+  border-radius: 50%;
+  width: 70px;
+  height: 70px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 1rem;
+  color: var(--text-main);
+  box-shadow: 0 4px 10px rgba(0,0,0,0.05);
+  transition: transform 0.3s ease;
+}
+
+.timeline-item:hover .timeline-icon-wrap {
+  transform: scale(1.1);
+  background: var(--text-main);
+  color: #fdfaf3;
+}
+
+.timeline-item h4 {
+  font-family: var(--font-heading);
+  font-size: 1.05rem;
+  color: var(--text-main);
+  margin-bottom: 0.4rem;
+  line-height: 1.2;
+}
+
+.timeline-item p {
+  font-family: var(--font-body);
+  font-size: 0.85rem;
+  color: var(--text-secondary);
+  margin: 0;
+  font-style: italic;
+}
+
+@media (max-width: 768px) {
+  .culture-section {
+    padding: 2rem 1.5rem;
+    gap: 3rem;
+  }
+  .culture-bento-grid {
+    grid-template-columns: 1fr;
+  }
+  .bento-text, .bento-img, .bento-img.wide {
+    grid-column: span 1;
+  }
+  .culture-bottom-row {
+    flex-direction: column;
+    gap: 2rem;
+  }
+  .quote-column {
+    width: 100%;
+    padding-right: 0;
+    border-right: none;
+    border-bottom: 1px solid rgba(0,0,0,0.15);
+    padding-bottom: 2rem;
+    justify-content: center;
+  }
+  .culture-quote {
+    text-align: center;
+    max-width: 100%;
+  }
+  .walkthrough-column {
+    width: 100%;
+    padding-left: 0;
+  }
+  .timeline-container {
+    flex-direction: column;
+    align-items: center;
+    gap: 2rem;
+  }
+  .timeline-container::before {
+    display: none;
+  }
+  .timeline-item {
+    width: 100%;
+  }
+}
+
+

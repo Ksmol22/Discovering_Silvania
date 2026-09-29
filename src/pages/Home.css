@@ -1,0 +1,110 @@
+/* Home.css */
+
+.home-page {
+  display: flex;
+  flex-direction: column;
+  padding-bottom: 5rem;
+}
+
+
+
+/* Intro Section */
+.home-intro-section {
+  padding: 6rem 4rem;
+  display: flex;
+  justify-content: center;
+  text-align: center;
+}
+
+.home-intro-text {
+  max-width: 800px;
+}
+
+.home-intro-text .section-title {
+  font-size: 2.5rem;
+  border-bottom: none;
+  margin-bottom: 1.5rem;
+  line-height: 1.3;
+}
+
+.home-divider {
+  width: 60px;
+  height: 1px;
+  background-color: var(--text-main);
+  margin: 0 auto 2rem auto;
+}
+
+.home-intro-text p {
+  font-size: 1.15rem;
+  color: var(--text-secondary);
+  line-height: 1.8;
+  margin-bottom: 1.5rem;
+}
+
+/* Explore Teasers */
+.explore-teasers {
+  max-width: 1200px;
+  margin: 0 auto 4rem auto;
+  padding: 0 4rem;
+  width: 100%;
+}
+
+.explore-cards {
+  display: flex;
+  gap: 2rem;
+  margin-top: 3rem;
+}
+
+.explore-card {
+  flex: 1;
+  background: #fdfaf3;
+  border: 1px solid rgba(0,0,0,0.1);
+  padding: 3rem 2rem;
+  text-align: center;
+  text-decoration: none;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  box-shadow: 2px 4px 15px rgba(0,0,0,0.05);
+}
+
+.explore-card:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+  border-color: rgba(0,0,0,0.2);
+}
+
+.explore-card h3 {
+  font-family: var(--font-heading);
+  font-size: 1.4rem;
+  color: var(--text-main);
+  margin-bottom: 1rem;
+}
+
+.explore-card p {
+  color: var(--text-secondary);
+  font-size: 0.95rem;
+  line-height: 1.6;
+  margin-bottom: 2rem;
+}
+
+.explore-link {
+  font-family: var(--font-heading);
+  font-style: italic;
+  color: var(--text-main);
+  font-size: 1.1rem;
+}
+
+@media (max-width: 768px) {
+  .home-intro-section {
+    padding: 3rem 1.5rem;
+  }
+  .home-intro-text .section-title {
+    font-size: 2rem;
+  }
+  .explore-teasers {
+    padding: 0 1.5rem;
+  }
+  .explore-cards {
+    flex-direction: column;
+    gap: 1.5rem;
+  }
+}
