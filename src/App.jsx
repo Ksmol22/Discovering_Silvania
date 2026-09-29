@@ -7,6 +7,7 @@ import History from './pages/History';
 import Places from './pages/Places';
 import Culture from './pages/Culture';
 import MapPage from './pages/MapPage';
+import Chatbot from './components/Chatbot';
 import './App.css';
 
 function App() {
@@ -30,6 +31,7 @@ function App() {
             <p className="footer-copy">© 2026 Discovering Silvania</p>
           </div>
         </footer>
+        <Chatbot />
       </div>
     </Router>
   );
